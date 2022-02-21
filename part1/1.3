@@ -1,0 +1,7 @@
+docker run -d --rm devopsdockeruh/simple-web-service:ubuntu
+docker exec -it boring_shockley bash
+tail -f ./text.log 
+exit
+docker stop boring_shockley
+
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
