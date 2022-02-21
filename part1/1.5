@@ -1,0 +1,44 @@
+Script started on 2022-02-21 11:17:38+02:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="90" LINES="46"]
+]0;hilgard@HP-EliteBook-820-G2: ~/workspace/docker/docker-devops/part1[01;32mhilgard@HP-EliteBook-820-G2[00m:[01;34m~/workspace/docker/docker-devops/part1[00m$ docer[K[Kker pull devopsdockeruh/simple-web-service:ubuntu
+ubuntu: Pulling from devopsdockeruh/simple-web-service
+Digest: sha256:d44e1dce398732e18c7c2bad9416a072f719af33498302b02929d4c112e88d2a
+Status: Image is up to date for devopsdockeruh/simple-web-service:ubuntu
+docker.io/devopsdockeruh/simple-web-service:ubuntu
+]0;hilgard@HP-EliteBook-820-G2: ~/workspace/docker/docker-devops/part1[01;32mhilgard@HP-EliteBook-820-G2[00m:[01;34m~/workspace/docker/docker-devops/part1[00m$ docker pull devopsdockeruh/simple-web-service:ubuntu[K[K[K[K[K[Kalpine
+alpine: Pulling from devopsdockeruh/simple-web-service
+Digest: sha256:dd4d367476f86b7d7579d3379fe446ae5dfce25480903fb0966fc2e5257e0543
+Status: Image is up to date for devopsdockeruh/simple-web-service:alpine
+docker.io/devopsdockeruh/simple-web-service:alpine
+]0;hilgard@HP-EliteBook-820-G2: ~/workspace/docker/docker-devops/part1[01;32mhilgard@HP-EliteBook-820-G2[00m:[01;34m~/workspace/docker/docker-devops/part1[00m$ docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED         SIZE
+ubuntu                              latest    54c9d81cbb44   2 weeks ago     72.8MB
+ubuntu                              18.04     dcf4d4bef137   2 weeks ago     63.2MB
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   11 months ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   11 months ago   15.7MB
+]0;hilgard@HP-EliteBook-820-G2: ~/workspace/docker/docker-devops/part1[01;32mhilgard@HP-EliteBook-820-G2[00m:[01;34m~/workspace/docker/docker-devops/part1[00m$ exit
+exit
+
+Script done on 2022-02-21 11:18:15+02:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-21 11:20:49+02:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="90" LINES="46"]
+]0;hilgard@HP-EliteBook-820-G2: ~/workspace/docker/docker-devops/part1[01;32mhilgard@HP-EliteBook-820-G2[00m:[01;34m~/workspace/docker/docker-devops/part1[00m$ s[Kdocker run -d --rm devopsdockeruh/simple-web-service:alpine 
+8c006473097e86a2c84e04a8341574cf5a2a18aa1dbfde4a27017122371d653c
+]0;hilgard@HP-EliteBook-820-G2: ~/workspace/docker/docker-devops/part1[01;32mhilgard@HP-EliteBook-820-G2[00m:[01;34m~/workspace/docker/docker-devops/part1[00m$ docker exec -it admiring_visvesvaraya sh
+/usr/src/app # [6n/usr/src/app # [Jtail[J[J[J[Jcat te/usr/src/app # cat text.log [J
+2022-02-21 09:21:06 +0000 UTC
+2022-02-21 09:21:08 +0000 UTC
+2022-02-21 09:21:10 +0000 UTC
+2022-02-21 09:21:12 +0000 UTC
+2022-02-21 09:21:14 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-02-21 09:21:16 +0000 UTC
+2022-02-21 09:21:18 +0000 UTC
+2022-02-21 09:21:20 +0000 UTC
+2022-02-21 09:21:22 +0000 UTC
+2022-02-21 09:21:24 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-02-21 09:21:26 +0000 UTC
+/usr/src/app # [6nexit
+]0;hilgard@HP-EliteBook-820-G2: ~/workspace/docker/docker-devops/part1[01;32mhilgard@HP-EliteBook-820-G2[00m:[01;34m~/workspace/docker/docker-devops/part1[00m$ exit
+exit
+
+Script done on 2022-02-21 11:21:31+02:00 [COMMAND_EXIT_CODE="0"]
