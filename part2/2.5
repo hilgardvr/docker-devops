@@ -1,0 +1,62 @@
+Script started on 2022-03-06 18:45:17+02:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="182" LINES="43"]
+]0;hilgard@HP-EliteBook-820-G2: ~/workspace/docker/docker-devops/temp/material-applications/scaling-exercise[01;32mhilgard@HP-EliteBook-820-G2[00m:[01;34m~/workspace/docker/docker-devops/temp/material-applications/scaling-exercise[00m$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+]0;hilgard@HP-EliteBook-820-G2: ~/workspace/docker/docker-devops/temp/material-applications/scaling-exercise[01;32mhilgard@HP-EliteBook-820-G2[00m:[01;34m~/workspace/docker/docker-devops/temp/material-applications/scaling-exercise[00m$ docker [K-compose up 0[K-d
+[33mWARNING[0m: The Docker Engine you're using is running in swarm mode.
+
+Compose does not use swarm mode to deploy services to multiple nodes in a swarm. All containers will be scheduled on the current node.
+
+To deploy your application across the swarm, use `docker stack deploy`.
+
+Creating load-balancer ... 
+Creating calculator    ... 
+Creating scaling-exercise_compute_1 ... 
+[3A[2KCreating load-balancer              ... [32mdone[0m[3B[2A[2KCreating calculator                 ... [32mdone[0m[2B[1A[2KCreating scaling-exercise_compute_1 ... [32mdone[0m[1B]0;hilgard@HP-EliteBook-820-G2: ~/workspace/docker/docker-devops/temp/material-applications/scaling-exercise[01;32mhilgard@HP-EliteBook-820-G2[00m:[01;34m~/workspace/docker/docker-devops/temp/material-applications/scaling-exercise[00m$ docker ps
+CONTAINER ID   IMAGE                                        COMMAND                  CREATED              STATUS              PORTS                                       NAMES
+fecc7433afd4   devopsdockeruh/scaling-exercise-compute      "docker-entrypoint.s…"   About a minute ago   Up About a minute   3000/tcp                                    scaling-exercise_compute_1
+58a7c2c6ba3f   devopsdockeruh/scaling-exercise-calculator   "docker-entrypoint.s…"   About a minute ago   Up About a minute   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   calculator
+2b58ab483294   load-balancer                                "/app/docker-entrypo…"   About a minute ago   Up About a minute   0.0.0.0:80->80/tcp, :::80->80/tcp           load-balancer
+]0;hilgard@HP-EliteBook-820-G2: ~/workspace/docker/docker-devops/temp/material-applications/scaling-exercise[01;32mhilgard@HP-EliteBook-820-G2[00m:[01;34m~/workspace/docker/docker-devops/temp/material-applications/scaling-exercise[00m$ docker [K-compose uo -[K[K[Kp --scale compute/[K=5[C[C[1@-[1@d[1@ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[33mWARNING[0m: The Docker Engine you're using is running in swarm mode.
+
+Compose does not use swarm mode to deploy services to multiple nodes in a swarm. All containers will be scheduled on the current node.
+
+To deploy your application across the swarm, use `docker stack deploy`.
+
+load-balancer is up-to-date
+calculator is up-to-date
+Creating scaling-exercise_compute_2 ... 
+Creating scaling-exercise_compute_3 ... 
+Creating scaling-exercise_compute_4 ... 
+Creating scaling-exercise_compute_5 ... 
+[3A[2KCreating scaling-exercise_compute_3 ... [32mdone[0m[3B[2A[2KCreating scaling-exercise_compute_4 ... [32mdone[0m[2B[1A[2KCreating scaling-exercise_compute_5 ... [32mdone[0m[1B[4A[2KCreating scaling-exercise_compute_2 ... [32mdone[0m[4B]0;hilgard@HP-EliteBook-820-G2: ~/workspace/docker/docker-devops/temp/material-applications/scaling-exercise[01;32mhilgard@HP-EliteBook-820-G2[00m:[01;34m~/workspace/docker/docker-devops/temp/material-applications/scaling-exercise[00m$ docker ps
+CONTAINER ID   IMAGE                                        COMMAND                  CREATED          STATUS          PORTS                                       NAMES
+0f5afd93d7f0   devopsdockeruh/scaling-exercise-compute      "docker-entrypoint.s…"   13 seconds ago   Up 10 seconds   3000/tcp                                    scaling-exercise_compute_2
+f2b77f9ed2b4   devopsdockeruh/scaling-exercise-compute      "docker-entrypoint.s…"   13 seconds ago   Up 11 seconds   3000/tcp                                    scaling-exercise_compute_4
+5bdfb255f475   devopsdockeruh/scaling-exercise-compute      "docker-entrypoint.s…"   13 seconds ago   Up 11 seconds   3000/tcp                                    scaling-exercise_compute_5
+a9762776efbd   devopsdockeruh/scaling-exercise-compute      "docker-entrypoint.s…"   13 seconds ago   Up 11 seconds   3000/tcp                                    scaling-exercise_compute_3
+fecc7433afd4   devopsdockeruh/scaling-exercise-compute      "docker-entrypoint.s…"   2 minutes ago    Up 2 minutes    3000/tcp                                    scaling-exercise_compute_1
+58a7c2c6ba3f   devopsdockeruh/scaling-exercise-calculator   "docker-entrypoint.s…"   2 minutes ago    Up 2 minutes    0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   calculator
+2b58ab483294   load-balancer                                "/app/docker-entrypo…"   2 minutes ago    Up 2 minutes    0.0.0.0:80->80/tcp, :::80->80/tcp           load-balancer
+]0;hilgard@HP-EliteBook-820-G2: ~/workspace/docker/docker-devops/temp/material-applications/scaling-exercise[01;32mhilgard@HP-EliteBook-820-G2[00m:[01;34m~/workspace/docker/docker-devops/temp/material-applications/scaling-exercise[00m$ docker-compose down
+Stopping scaling-exercise_compute_2 ... 
+Stopping scaling-exercise_compute_4 ... 
+Stopping scaling-exercise_compute_5 ... 
+Stopping scaling-exercise_compute_3 ... 
+Stopping scaling-exercise_compute_1 ... 
+Stopping calculator                 ... 
+Stopping load-balancer              ... 
+[4A[2KStopping scaling-exercise_compute_3 ... [32mdone[0m[4B[5A[2KStopping scaling-exercise_compute_5 ... [32mdone[0m[5B[3A[2KStopping scaling-exercise_compute_1 ... [32mdone[0m[3B[7A[2KStopping scaling-exercise_compute_2 ... [32mdone[0m[7B[1A[2KStopping load-balancer              ... [32mdone[0m[1B[6A[2KStopping scaling-exercise_compute_4 ... [32mdone[0m[6B[2A[2KStopping calculator                 ... [32mdone[0m[2BRemoving scaling-exercise_compute_2 ... 
+Removing scaling-exercise_compute_4 ... 
+Removing scaling-exercise_compute_5 ... 
+Removing scaling-exercise_compute_3 ... 
+Removing scaling-exercise_compute_1 ... 
+Removing calculator                 ... 
+Removing load-balancer              ... 
+[5A[2KRemoving scaling-exercise_compute_5 ... [32mdone[0m[5B[6A[2KRemoving scaling-exercise_compute_4 ... [32mdone[0m[6B[7A[2KRemoving scaling-exercise_compute_2 ... [32mdone[0m[7B[4A[2KRemoving scaling-exercise_compute_3 ... [32mdone[0m[4B[1A[2KRemoving load-balancer              ... [32mdone[0m[1B[3A[2KRemoving scaling-exercise_compute_1 ... [32mdone[0m[3B[2A[2KRemoving calculator                 ... [32mdone[0m[2BRemoving network scaling-exercise_default
+]0;hilgard@HP-EliteBook-820-G2: ~/workspace/docker/docker-devops/temp/material-applications/scaling-exercise[01;32mhilgard@HP-EliteBook-820-G2[00m:[01;34m~/workspace/docker/docker-devops/temp/material-applications/scaling-exercise[00m$ docekr p[K[K[K[Kke[K[K[Kker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+]0;hilgard@HP-EliteBook-820-G2: ~/workspace/docker/docker-devops/temp/material-applications/scaling-exercise[01;32mhilgard@HP-EliteBook-820-G2[00m:[01;34m~/workspace/docker/docker-devops/temp/material-applications/scaling-exercise[00m$ exit
+exit
+
+Script done on 2022-03-06 18:48:19+02:00 [COMMAND_EXIT_CODE="0"]
