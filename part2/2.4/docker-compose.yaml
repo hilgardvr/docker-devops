@@ -1,15 +1,15 @@
-version: '3.8'
+version: '3.3'
 
 services:
     redis:
         image: redis
     be:
-        build: ./be/
+        image: hilgardvr/example-backend
         ports:
             - 9000:9000
         environment:
             - REDIS_HOST=redis
     fe:
-        build: ./fe/
+        image: hilgardvr/example-frontend
         ports:
             - 5000:5000
