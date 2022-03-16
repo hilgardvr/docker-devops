@@ -2,25 +2,24 @@ version: '3.3'
 
 services:
   be:
-    build: ./ml-kurkkumopo-backend
+    image: hilgardvr/27_be
     ports:
       - 5000:5000
     depends_on:
       - training
     volumes:
-      - data:/src/data
       - model:/src/model
   fe:
-    build: ./ml-kurkkumopo-frontend
+    image: hilgardvr/27_fe
     ports:
       - 3000:3000
     depends_on:
       - be
   training:
-    build: ./ml-kurkkumopo-frontend
+    image: hilgardvr/27_training
     volumes:
-      - data:/data
-      - model:/model 
+      - data:/src/data
+      - model:/src/model 
 
 
 volumes:
