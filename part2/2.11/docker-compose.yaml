@@ -1,0 +1,6 @@
+version: '3.3'
+
+services:
+    elixir:
+        build: .
+        container_name: elixir-dev
