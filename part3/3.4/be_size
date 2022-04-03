@@ -1,0 +1,8 @@
+Script started on 2022-04-03 08:06:19+02:00 [TERM="screen-256color" TTY="/dev/pts/4" COLUMNS="100" LINES="22"]
+[01;32mhilgard[00m:[01;34m~/workspace/docker/docker-devops/part3/3.4[00m$ exitdocker images | grep _ge[1Pebe
+hilgardvr/34[01;31m[K_be[m[K              latest                546730218e1a   3 minutes ago    24.2MB
+hilgardvr/33[01;31m[K_be[m[K              latest                5bc92ab5d277   22 hours ago     645MB
+[01;32mhilgard[00m:[01;34m~/workspace/docker/docker-devops/part3/3.4[00m$ exit
+exit
+
+Script done on 2022-04-03 08:06:24+02:00 [COMMAND_EXIT_CODE="0"]
