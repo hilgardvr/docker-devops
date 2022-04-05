@@ -15,9 +15,9 @@ ENV REACT_APP_BACKEND_URL=http://localhost
 
 RUN npm install -g serve
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY --from=fe-builder /usr/src/app/build /app
+COPY --from=fe-builder /usr/src/app/build ./build
 
 USER guest
 
