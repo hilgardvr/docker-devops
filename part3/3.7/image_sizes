@@ -1,0 +1,8 @@
+Script started on 2022-04-05 19:35:21+02:00 [TERM="screen-256color" TTY="/dev/pts/2" COLUMNS="106" LINES="52"]
+[01;32mhilgard[00m:[01;34m~/workspace/docker/docker-devops/part3/3.7[00m$ docker imge[Ka[K[Kages | grep spring
+[01;31m[Kspring[m[K-new                         latest               01f7620f5ba3   3 minutes ago    106MB
+[01;31m[Kspring[m[K-before                      latest               9761b700bda9   22 minutes ago   611MB
+[01;32mhilgard[00m:[01;34m~/workspace/docker/docker-devops/part3/3.7[00m$ exit
+exit
+
+Script done on 2022-04-05 19:35:45+02:00 [COMMAND_EXIT_CODE="0"]
